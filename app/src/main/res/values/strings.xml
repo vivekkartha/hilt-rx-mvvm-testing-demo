@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Artemis</string>
+    <string name="loading">Loading…</string>
+    <string name="fetch_all">Fetch all</string>
+    <string name="tenth_char">10th character (including whitespace)\n\n%1$s</string>
+    <string name="every_tenth_char">Every 10th character (including whitespace)\n\n%1$s</string>
+    <string name="word_counter">Count of every word (case-insensitive, no whitespaces)\n\n%1$s</string>
+    <string name="info">Blog contents are treated as plain text (including the html/js/css)</string>
+</resources>

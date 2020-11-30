@@ -1,0 +1,75 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        kotlinVersion = "1.3.72"
+        hiltCoreVersion = "2.28-alpha"
+        hiltAndroid = "1.0.0-alpha02"
+        robolectricVersion = "4.4"
+
+        kotlinDep = [
+                core: "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+        ]
+        retrofit = [
+                core     : "com.squareup.retrofit2:retrofit:2.9.0",
+                scalar   : "com.squareup.retrofit2:converter-scalars:2.1.0",
+                rxAdapter: "com.squareup.retrofit2:adapter-rxjava3:2.9.0"
+        ]
+
+        test = [
+                mockito    : "org.mockito:mockito-core:3.0.0",
+                robolectric: "org.robolectric:robolectric:4.4",
+                nhaarman   : "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0",
+                junit      : "junit:junit:4.13",
+                hiltAndroid: "com.google.dagger:hilt-android-testing:2.28-alpha"
+        ]
+
+        hiltdi = [
+                compiler       : "androidx.hilt:hilt-compiler:$hiltAndroid",
+                androidCompiler: "com.google.dagger:hilt-android-compiler:$hiltCoreVersion",
+                android        : "com.google.dagger:hilt-android:$hiltCoreVersion",
+                viewModel      : "androidx.hilt:hilt-lifecycle-viewmodel:$hiltAndroid",
+        ]
+
+        ktx = [
+                fragment: "androidx.fragment:fragment-ktx:1.2.5"
+        ]
+
+        rx = [
+                java   : "io.reactivex.rxjava3:rxjava:3.0.1",
+                android: "io.reactivex.rxjava3:rxandroid:3.0.0"
+
+        ]
+
+        androidx = [
+                coreKtx         : "androidx.core:core-ktx:1.3.2",
+                appCompat       : "androidx.appcompat:appcompat:1.2.0",
+                constraintLayout: "androidx.constraintlayout:constraintlayout:2.0.4",
+                lifecycle       : "androidx.lifecycle:lifecycle-extensions:2.2.0",
+                viewModelKtx    : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0",
+                textx           : "androidx.test.ext:junit:1.1.2"
+        ]
+    }
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.0.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:2.28-alpha"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

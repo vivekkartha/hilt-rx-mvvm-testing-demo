@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SectionLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/home"
+        style="@style/MatchParentLayout"
+        tools:context=".ui.main.HomeFragment">
+
+        <TextView
+            android:id="@+id/tvInfo"
+            style="@style/WrapContentLayout"
+            android:layout_marginTop="@dimen/spacing1x"
+            android:text="@string/info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnFetchAll"
+            style="@style/WrapContentLayout"
+            android:layout_marginTop="@dimen/spacing4x"
+            android:text="@string/fetch_all"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTenthChar"
+            style="@style/WrapContentLayout"
+            android:layout_marginTop="@dimen/spacing4x"
+            android:textSize="@dimen/text_16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnFetchAll"
+            tools:text="10th character" />
+
+        <TextView
+            android:id="@+id/tvEveryTenth"
+            style="@style/WrapContentLayout"
+            android:layout_marginTop="@dimen/spacing3x"
+            android:textSize="@dimen/text_16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTenthChar"
+            tools:text="Every 10th character" />
+
+        <TextView
+            android:id="@+id/tvWordCounter"
+            style="@style/WrapContentLayout"
+            android:layout_marginTop="@dimen/spacing4x"
+            android:textSize="@dimen/text_16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEveryTenth"
+            tools:text="Word counter" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

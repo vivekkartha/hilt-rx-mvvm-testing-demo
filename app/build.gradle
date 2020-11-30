@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    compileSdkVersion 29
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    defaultConfig {
+        applicationId "com.truecaller.artemis"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    api kotlinDep.core
+
+    api androidx.coreKtx
+    api androidx.appCompat
+    api androidx.constraintLayout
+    api androidx.lifecycle
+    api androidx.viewModelKtx
+    androidTestApi androidx.textx
+
+    // Retrofit
+    api retrofit.core
+    api retrofit.rxAdapter
+    api retrofit.scalar
+
+    // Rx
+    api rx.java
+    api rx.android
+
+    // Tests
+    testApi test.junit
+    testApi test.nhaarman
+    testApi test.mockito
+    androidTestApi test.mockito
+    testApi test.robolectric
+
+    // Hilt testing dependency
+    androidTestApi test.hiltAndroid
+    // Make Hilt generate code in the androidTest folder
+    kaptAndroidTest hiltdi.androidCompiler
+
+    // HILT
+    kapt hiltdi.compiler
+    api hiltdi.android
+    kapt hiltdi.androidCompiler
+    api hiltdi.viewModel
+
+    api ktx.fragment
+}
