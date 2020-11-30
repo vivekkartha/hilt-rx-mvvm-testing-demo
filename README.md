@@ -1,4 +1,3 @@
-# Project Artemis 
 #### Demo project for  HILT, MVVM, RxJava ,Rx Testing, Robolectric, Kotlin, Repository
 Author: Vivek Kartha
 
